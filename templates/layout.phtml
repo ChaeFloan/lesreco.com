@@ -1,0 +1,50 @@
+<?php
+include '/xampp/htdocs/lesreco.com/base/sessionStart.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesreco.com</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.php">LESRECO.COM</a></li>
+        <!-- Si l'utilisateur n'est pas connecté, on lui propose de s'inscrire ou à se connecter -->
+        <?php if (!isset($_SESSION['auth'])) : ?>
+          <li><a href="addUser.php">Inscription</a></li>
+          <li><a href="connexionUser.php">Connexion</a></li>
+        <?php endif ?>
+        <!-- Si l'utilisateur est connecté, on lui propose d'ajouter un film ou d'accéder à son espace privé -->
+        <?php if (isset($_SESSION['auth'])) : ?>
+          <li>Bienvenue <?= $_SESSION['auth']['pseudo'] ?></li>
+          <li><a href="addMovie.php">Ajouter un film</a></li>
+          <li><a href="compteUser.php">Mon espace membre</a></li>
+          <li><a href="deconnexionUser.php">Déconnexion</a></li>
+        <?php endif ?>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+
+    <?php require $template ?>
+
+
+
+
+
+  </main>
+</body>
+
+</html>

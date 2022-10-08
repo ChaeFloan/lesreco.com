@@ -1,0 +1,45 @@
+<section>
+  <form action="addMovie.php" method="POST">
+    <div>
+      <label for="titre">Titre : </label>
+      <input type="text" name="titre" placeholder="Exemple: Titanic" maxlength="45" required pattern="^[A-Za-z '-]+$" />
+    </div>
+    <!-- <div>
+                    <label for="titre">Image : </label>
+                    <input type="file" id="image" name="image" accept="image/png, image/jpg, image/jpeg">
+                </div> -->
+    <div>
+      <label for="genre">Genre : </label>
+      <select name="genre" id="genre" required>
+        <option value="">Choisi un genre : </option>
+        <option value="Animation">Animation</option>
+        <option value="Jeunesse">Jeunesse</option>
+        <option value="Musical">Musical</option>
+        <option value="Biopic">Biopic</option>
+        <option value="Comédie">Comédie</option>
+        <option value="Documentaire">Documentaire</option>
+        <option value="Drame">Drame</option>
+        <option value="Fantastique">Fantastique</option>
+        <option value="Science-fiction">Science-fiction</option>
+        <option value="Horreur">Horreur</option>
+        <option value="Guerre / Histoire">Guerre / Histoire</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Western">Western</option>
+      </select>
+    </div>
+    <div>
+      <label for="etiquettes">Étiquettes : </label>
+      <select name="etiquettes" id="etiquettes" required>
+        <option value="">Choisi une étiquette : </option>
+        <option value="WTF">WTF</option>
+        <option value="Pas pendant les repas !">Pas pendant les repas !</option>
+        <option value="Que d'émotions <3">Que d'émotions <3 </option>
+        <option value="Âmes sensibles d'abstenir">Âmes sensibles d'abstenir</option>
+        <option value="S-F qui tue">S-F qui tue</option>
+        <option value="Nanar">Nanar</option>
+        <option value="Scènes cultes">Scènes cultes</option>
+      </select>
+    </div>
+    <input type="submit" value="Valider" />
+  </form>
+</section>

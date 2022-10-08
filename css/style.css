@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    min-height: 100vh;
+}
+
+body {
+    background-color: black;
+    color: rgb(225, 225, 225);
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgb(142, 146, 159);
+    width: 100%;
+    height: 30px;
+}
+
+/* ******************************** */
+/* LAYOUT.PHTML */
+/* ******************************** */
+
+nav ul {
+    display: flex;
+}
+
+main section {
+    background-color: rgba(0, 0, 0, 0.144);
+    height: auto;
+    padding: 20px;
+}
+
+main section p {
+    padding: 5px;
+}
+
+
+/* ******************************** */
+/* INDEX.PHTML */
+/* ******************************** */
+.listeProgrammes {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px;
+    background-color: rgb(142, 146, 159);
+    margin: 5px;
+    position: relative;
+}
+
+img {
+    min-width: 80%;
+    width: 50px;
+    min-height: auto;
+    height: 40px;
+    background-color: blue;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+}

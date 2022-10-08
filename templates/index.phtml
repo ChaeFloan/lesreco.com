@@ -1,0 +1,36 @@
+<?php if (!isset($_SESSION['auth'])) : ?>
+  <section>
+    <div>
+      <p>Bienvenue sur LESRECO.COM :D</p>
+      <br>
+      <br>
+      <br>
+      <p>PENSER A AJOUTER UN "S" à FILM dans la BDD et sur l'ensemble des pages concernées sur VSCODE</p>
+    </div>
+  </section>
+<?php endif ?>
+
+
+<?php if (isset($_SESSION['auth'])) : ?>
+  <?php foreach ($listeUsers as $user) : ?>
+    <section>
+      <div>
+        <p><?= $user["pseudo"] ?></p>
+        <div class="listeProgrammes">
+          <?php foreach ($listeFilms as $film) : ?>
+            <ul>
+              <li>
+                <div>
+                  <h1><?= $film["titre"] ?></h1>
+                  <p>Genre : <?= $film["genre"] ?></p>
+                  <p>#<?= $film["etiquettes"] ?></p>
+                </div>
+                <img src="" alt="" />
+              </li>
+            </ul>
+          <?php endforeach ?>
+        </div>
+      </div>
+    </section>
+  <?php endforeach ?>
+<?php endif ?>

@@ -1,0 +1,27 @@
+<section>
+    AFFICHER LA LISTE DE MES FILMS !
+    <p>Ma liste</p>
+    <div class="listeProgrammes">
+        <?php foreach ($listeFilmsUserAuth as $film) : ?>
+            <ul>
+                <li>
+                    <div>
+                        <!-- FAIRE UNE METHODE GET AVEC CONCATENATION APRES LE PHP, si pas de solution avec POST -->
+                        <form action="deleteMovie.php" method="POST">
+                            <input type="submit" name="delete" value='Supprimer'>
+                        </form>
+                        <h1><?= $film["titre"] ?></h1>
+                        <p>Genre : <?= $film["genre"] ?></p>
+                        <p>#<?= $film["etiquettes"] ?></p>
+                    </div>
+                    <img src="" alt="" />
+                </li>
+            </ul>
+        <?php endforeach ?>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="modificationUser.php">Modifier les informations de mon compte ?</a>
+</section>

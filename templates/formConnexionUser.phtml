@@ -1,0 +1,13 @@
+<section>
+    <form action="connexionUser.php" method="POST">
+        <div>
+            <label for="pseudo">Pseudo : </label>
+            <input type="text" name="pseudo" required pattern="^[A-Za-z '-]+$" />
+        </div>
+        <div>
+            <label for="password">Mot de passe : </label>
+            <input type="password" name="password" required />
+        </div>
+        <input type="submit" value="Valider" />
+    </form>
+</section>

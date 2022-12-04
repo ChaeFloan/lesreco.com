@@ -13,7 +13,7 @@ if (!empty($_POST)) {
 
     // AJOUTER LE FILM DANS LA BDD (il s'agira d'une BDD globale à tous les utilisateurs)
     $requete = $bdd->prepare(
-        "INSERT INTO film (titre, genre, etiquettes)
+        "INSERT INTO films (titre, genre, etiquettes)
     VALUES (:titre,:genre,:etiquettes)"
     );
     $requete->execute(array(
@@ -21,38 +21,6 @@ if (!empty($_POST)) {
         ":genre" => $genre,
         ":etiquettes" => $etiquettes
     ));
-    // ce qui vient ensuite a été ajouté et non testé !!! - note du vendredi 07/10/2022
-    // ************************************************************************************
-    // ATTENTION il faudra retoucher au code de la page d'accueil car il faudra afficher chaque liste indépendament de chaque utilisateur
-
-    // On récupère les informations du film afin de passer à l'étape suivante
-    // REQUETE INCOMPLETE -----
-    // $requete = $bdd->prepare(
-    //     "SELECT id, titre
-    //     FROM film
-    //     WHERE titre = ?"
-    // );
-    // $requete->execute(
-    //     [$_POST['titre']]
-    // );
-    // $nouveauFilmAjoute = $requete->fetch();
-
-
-
-    // REQUETE KO - voir comment faire pour associer un film à plusieurs utilisateurs
-    // AJOUTER L'ID DU FILM DANS L'ID_FILM DE L'UTILISATEUR
-    // $requete = $bdd->prepare(
-    //     "INSERT INTO users (id_film) 
-    //     SELECT film.id
-    //     FROM film
-    //     INNER JOIN users ON users.id_film = film.id"
-    // );
-    // $requete->execute();
-
-    // INSERT INTO orders ( userid, timestamp) 
-    // SELECT o.userid , o.timestamp 
-    // FROM users u 
-    // INNER JOIN orders o ON  o.userid = u.id
 
 
 

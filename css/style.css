@@ -1,58 +1,179 @@
+/* hOME TITRE */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+/* SOUS TITRE */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+/* TEXTE GLOBAL */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Libre Baskerville', serif;
+    color: rgb(227, 227, 227);
 }
 html {
-    min-height: 100vh;
+    min-height: 100%;
+    height: 100%;
 }
 
 body {
     background-color: black;
-    color: rgb(225, 225, 225);
-    min-height: 100vh;
+
+    height: 100%;
 }
 
 header {
-    background-color: rgb(142, 146, 159);
+    /* background-color: rgb(127, 162, 210); */
+    /* background-color: rgb(96, 125, 182); */
+    background-color: #41909c;
     width: 100%;
-    height: 30px;
+    height: 50px;
+}
+
+a, a:visited {
+    color: rgb(227, 227, 227);
+
+    text-decoration: none;
+}
+
+.alignCenterFullHeight {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.homeIcon {
+    height: 20px;
+    width: 20px;
+}
+
+/* ******************************** */
+/* FORMULAIRES */
+/* ******************************** */
+
+form {
+    height: 100%;
+    padding: 20px 20px 0 20px;
+}
+
+
+form div {
+    margin: 15px 0;
+}
+
+form div input {
+    width: 100%;
+    height: 40px;
+    margin: 5px 0;
+    background: black;
+border-top: none;
+border-left: none;
+border-right: none;
+outline: none;
+}
+
+form div select, form .submitButton {
+    background: black;
+padding: 5px;
+}
+
+.inputButton {
+    margin: 10px 0px;
+background-color: black;
+color: white;
+border-radius: 5px;
+width: 100%;
+height: 40px;
 }
 
 /* ******************************** */
 /* LAYOUT.PHTML */
 /* ******************************** */
+nav {
+    position: relative;
+    z-index: 100;
+}
 
-nav ul {
-    display: flex;
+@media (max-width: 660px) {
+    nav ul :not(:first-of-type) {
+        display: none;
+    }
+}
+/* nav ul :not(:first-of-type) {
+    display: none;
+} */
+
+main {
+    height: 100%;
 }
 
 main section {
     background-color: rgba(0, 0, 0, 0.144);
-    height: auto;
-    padding: 20px;
+    height: 100%;
 }
 
-main section p {
-    padding: 5px;
+main section h1 {
+    text-align: center;
+margin: 40px 10px 50px 10px;
 }
-
 
 /* ******************************** */
 /* INDEX.PHTML */
 /* ******************************** */
-.listeProgrammes {
-    display: flex;
+
+.homePage {
+    flex-direction: column;
 }
+
+.homeTitle {
+    color: white;
+    font-size: 12vw;
+    font-family: 'Special Elite', cursive;
+}
+
+.homeUnderTitle {
+    font-size: 7vw;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    margin: 10px 40px;
+}
+
+.button {
+padding: 5px;
+}
+
+.button a {
+font-size: 7vw;
+}
+
+.nameUserListAccueil {
+    margin: 40px 10px 5px 10px;
+}
+
+.listeProgrammesAccueil {
+    display: block ruby;
+    overflow-y: auto;
+}
+
+/* .button a {
+font-size: 6vw;
+} */
+
 
 li {
     list-style-type: none;
     padding: 10px;
-    background-color: rgb(142, 146, 159);
-    margin: 5px;
+    /* background-color: rgb(96, 125, 182); */
     position: relative;
+    
 }
 
-img {
+/* img {
     min-width: 80%;
     width: 50px;
     min-height: auto;
@@ -60,5 +181,74 @@ img {
     background-color: blue;
     /* position: absolute;
     top: 0;
-    left: 0; */
+    left: 0; 
+} 
+*/
+
+/* ******************************** */
+/* COMPTEUSER.PHTML */
+/* ******************************** */
+.listeProgrammesUser {
+    display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.listeProgrammes form {
+    padding: 0px;
+}
+
+.supprMovie {
+    position: absolute;
+top: 15px;
+right: 15px;
+}
+
+.formFilm {
+    width: 150px;
+height: 200px;
+/* border: 2px white solid; */
+margin: 10px;
+position: relative;
+}
+
+.formFilm a {
+    width: 100%;
+    height: 100%;
+}
+
+.formFilm p {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #000000b0;
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.formFilm img {
+    width: 150px;
+    height: 200px;
+}
+
+
+/* .formFilm ul li {
+    border: 2px white solid;
+margin: 10px;
+
+} */
+
+/* MEDIA QUERIES */
+/* .listeProgrammes {
+    display: flex;
+} */
+@media (min-width: 660px) {
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav ul :not(:first-of-type) {
+        float: right;
+    }
 }

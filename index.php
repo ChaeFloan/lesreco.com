@@ -6,7 +6,7 @@ $bdd = getConnexion();
 
 // ICI ON RECUPERE LA LISTE DES FILMS POUR L'AFFICHER EN TEMPLATE
 $requete = $bdd->query(
-    "SELECT * FROM film"
+    "SELECT * FROM films"
 );
 $requete->execute();
 $listeFilms = $requete->fetchAll();

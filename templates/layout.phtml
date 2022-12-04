@@ -15,16 +15,42 @@ include '/xampp/htdocs/lesreco.com/base/sessionStart.php';
 </head>
 
 <body>
+
+
+
+
+  <?php if (isset($_SESSION['auth'])) : ?>
+
+    <header>
+      <nav>
+        <ul>
+          <!-- Si l'utilisateur est connecté, on lui propose d'ajouter un film ou d'accéder à son espace privé -->
+          <li><a href="index.php">LESRECO.COM</a></li>
+          <li><a href="compteUser.php">Bonjour <?= $_SESSION['auth']['pseudo'] ?></a></li>
+          <li><a href="addMovie.php">Ajouter un film</a></li>
+          <!-- <li><a href="compteUser.php">Mon espace membre</a></li> -->
+          <li><a href="deconnexionUser.php">Déconnexion</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <?php endif ?>
+
+
+
+
+  <!--   
   <header>
     <nav>
       <ul>
         <li><a href="index.php">LESRECO.COM</a></li>
-        <!-- Si l'utilisateur n'est pas connecté, on lui propose de s'inscrire ou à se connecter -->
+        Si l'utilisateur n'est pas connecté, on lui propose de s'inscrire ou à se connecter
         <?php if (!isset($_SESSION['auth'])) : ?>
           <li><a href="addUser.php">Inscription</a></li>
           <li><a href="connexionUser.php">Connexion</a></li>
         <?php endif ?>
-        <!-- Si l'utilisateur est connecté, on lui propose d'ajouter un film ou d'accéder à son espace privé -->
+
+        Si l'utilisateur est connecté, on lui propose d'ajouter un film ou d'accéder à son espace privé
         <?php if (isset($_SESSION['auth'])) : ?>
           <li>Bienvenue <?= $_SESSION['auth']['pseudo'] ?></li>
           <li><a href="addMovie.php">Ajouter un film</a></li>
@@ -33,7 +59,7 @@ include '/xampp/htdocs/lesreco.com/base/sessionStart.php';
         <?php endif ?>
       </ul>
     </nav>
-  </header>
+  </header> -->
 
   <main>
 
@@ -41,7 +67,7 @@ include '/xampp/htdocs/lesreco.com/base/sessionStart.php';
     <?php require $template ?>
 
 
-
+    CREDITS : icon-icons
 
 
   </main>

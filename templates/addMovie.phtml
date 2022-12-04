@@ -1,5 +1,6 @@
 <section>
   <form action="addMovie.php" method="POST">
+    <input type="hidden" name="id" />
     <div>
       <label for="titre">Titre : </label>
       <input type="text" name="titre" placeholder="Exemple: Titanic" maxlength="45" required pattern="^[A-Za-z '-]+$" />
@@ -40,6 +41,6 @@
         <option value="Scènes cultes">Scènes cultes</option>
       </select>
     </div>
-    <input type="submit" value="Valider" />
+    <input class="submitButton" type="submit" value="Valider" />
   </form>
 </section>

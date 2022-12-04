@@ -1,36 +1,70 @@
+<!-- Si l'utilisateur n'est pas connecté, on lui propose de s'inscrire ou à se connecter -->
 <?php if (!isset($_SESSION['auth'])) : ?>
-  <section>
+  <section class="homePage alignCenterFullHeight">
+    <h1 class="homeTitle">LESRECO.COM</h1>
+    <p class="homeUnderTitle">Vos meilleures recommandations de films et séries !</p>
     <div>
-      <p>Bienvenue sur LESRECO.COM :D</p>
-      <br>
-      <br>
-      <br>
-      <p>PENSER A AJOUTER UN "S" à FILM dans la BDD et sur l'ensemble des pages concernées sur VSCODE</p>
+      <div class="centerText button">
+        <!-- <i class="fi fi-rs-video-camera-alt"></i> -->
+        <a href="connexionUser.php">Connexion</a>
+      </div>
+      <div class="centerText button">
+        <a href="addUser.php">Inscription</a>
+      </div>
     </div>
   </section>
 <?php endif ?>
 
 
+<!-- <li><a href="index.php">LESRECO.COM</a></li>
+        <?php if (!isset($_SESSION['auth'])) : ?>
+          <li></li>
+          <li></li>
+        <?php endif ?>
+
+ -->
+
+
+
+
+
+<!-- Si l'utilisateur est connecté, on affiche la page d'accueil -->
 <?php if (isset($_SESSION['auth'])) : ?>
-  <?php foreach ($listeUsers as $user) : ?>
-    <section>
+  <section>
+    <h1>Nos utilisateurs et leurs listes de recommandations</h1>
+    <?php foreach ($listeUsers as $user) : ?>
       <div>
-        <p><?= $user["pseudo"] ?></p>
-        <div class="listeProgrammes">
+        <p class="nameUserListAccueil"><?= $user["pseudo"] ?> (donnée à faire disparaître lors de la mise en prod)</p>
+        <div class="listeProgrammesAccueil">
           <?php foreach ($listeFilms as $film) : ?>
-            <ul>
+
+            <div class="formFilm">
+              <a href="">
+                <p><?= $film["titre"] ?></p>
+                <!-- <p>Genre : <?= $film["genre"] ?></p> -->
+                <!-- <p>#<?= $film["etiquettes"] ?></p> -->
+                <!-- Renommer la classe formFilm -->
+                <img src="images/affiche.PNG" alt="">
+              </a>
+            </div>
+
+            <!-- <ul>
               <li>
                 <div>
-                  <h1><?= $film["titre"] ?></h1>
-                  <p>Genre : <?= $film["genre"] ?></p>
-                  <p>#<?= $film["etiquettes"] ?></p>
+                  <form class="formFilm" action="addMovieToList.php" method="POST">
+                    <input type="submit" name="addMovieToList" value='Ajouter à ma liste'>
+                    <input type="hidden" name="id" value="<?= $film["id"]; ?>" />
+                    <p><?= $film["titre"] ?></p>
+                    <p>Genre : <?= $film["genre"] ?></p>
+                    <p>#<?= $film["etiquettes"] ?></p>
+                  </form>
                 </div>
                 <img src="" alt="" />
               </li>
-            </ul>
+            </ul> -->
           <?php endforeach ?>
         </div>
       </div>
-    </section>
-  <?php endforeach ?>
+    <?php endforeach ?>
+  </section>
 <?php endif ?>
